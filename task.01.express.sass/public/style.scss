@@ -1,0 +1,221 @@
+$PrimaryColor: #007acc;
+$secondaryColor: yellow;
+
+@mixin column-count($column-count) {
+    -webkit-column-count: $column-count;
+       -moz-column-count: $column-count;
+            column-count: $column-count;
+}
+
+footer { display: none; }
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body, ul {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #2f3236;
+}
+/*
+a:hover {
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+}
+*/
+header,
+footer, 
+.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+header,
+footer {
+    z-index: 100;
+    position: fixed;
+    background-color: #eee;
+    left: 0;
+    vertical-align: middle;
+}
+header {
+    border-bottom: 1px solid gray;
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25);
+}
+footer {
+    bottom: 0;
+}
+nav {
+    float: left;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+}
+div,
+nav ul,
+nav.primary ul li,
+nav.secondary ul li {
+    display: block;
+}
+nav.secondary ul li {
+    width: 100%;
+}
+nav.primary,
+nav.secondary {
+    float: left;
+}
+nav:first-of-type {
+    background-color: #aaa;
+}
+nav ul li:hover {
+    cursor: pointer;
+    background-color: $PrimaryColor;
+}
+nav ul li:hover > * {
+    color: $secondaryColor;
+}
+li,
+.burger-icon {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+.primary ul {
+    display: none;
+}
+.txt {
+    float: left;
+}
+.txt,
+.grid {
+    clear: both; 
+}
+.grid {
+    /* Prevent vertical gaps */
+    line-height: 0px;
+   
+    @include column-count(1);
+
+    -webkit-column-gap:   0px;
+       -moz-column-gap:   0px;
+            column-gap:   0px; 
+}
+.grid .img-box {
+    display: inline-block;
+    border: 3px solid white;
+    overflow: hidden;
+}
+.img-box img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+    transition: all .25s ease-in-out;
+    -webkit-backface-visibility: hidden; /* Chrome bug: force hw acceleration on element that blinks */
+    backface-visibility: hidden; /* Chrome bug: force hw acceleration on element that blinks */
+}
+.img-box img:hover {
+    z-index: 200;
+    cursor: pointer;
+    filter: none;
+    -webkit-filter: none;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.burger-icon {
+    float: right;
+    cursor: pointer;
+    padding-right: 5px;
+}
+.burger-icon:hover {
+    background-color: $PrimaryColor;
+    color: $secondaryColor;
+}
+.content {
+    padding: 10px;
+    padding-top: 300px;
+}
+article h2:hover {
+    color: $PrimaryColor    
+}
+p::selection {
+    background-color: $PrimaryColor;
+    color: $secondaryColor;
+}
+p::-moz-selection {
+    background-color: $PrimaryColor;
+    color: $secondaryColor;
+}
+ /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        nav.primary ul li,
+        nav.secondary ul li {
+            float: left;
+            width: auto;
+            font-size: 1rem;
+        }
+        nav.primary ul li:not(:last-of-type),
+        nav.secondary ul li:not(:last-of-type) {
+            margin-right: 5px;
+        }
+        .content {
+            padding-top: 100px;
+        }
+        article {
+            width: 50%;
+            float: left; 
+            padding: 10px;
+        }
+        .grid {
+            @include column-count(2);
+        }
+        .img-box img {
+            -webkit-filter: grayscale(0.9);
+            filter: grayscale(0.9);
+        }
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        nav.primary,
+        nav.secondary {
+            width: 100%;
+        }
+        .burger-icon {
+            display: none;
+        }
+        .primary ul {
+            display: block;
+        }
+        nav.primary ul li:not(:last-of-type),
+        nav.secondary ul li:not(:last-of-type) {
+            margin-right: 20px;
+        }
+        nav.secondary ul li {
+            font-size: 1.2rem;
+        }
+        .content {
+            padding-top: 70px;
+        }
+        article {
+            width: 33%;
+            float: left; 
+        }
+        .grid {
+           @include column-count(3);
+        }
+    }
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }}

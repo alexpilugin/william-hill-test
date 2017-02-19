@@ -1,0 +1,49 @@
+* {
+    margin:0;
+    padding:0;
+}
+.container {
+    padding: 20px;
+}
+.open {
+    color: red;
+    background-position: -1em 0px;
+}
+#menu {
+    padding: 10px;
+    cursor: pointer;
+    padding-right: 30px;
+    border-right: 1px solid gray;
+    float: left;
+    width: auto;
+}
+#content {
+    float: left;
+    padding-left: 20px;    
+}
+li {
+    list-style-type:none;
+    position:relative;
+    margin-left: 15px;
+}
+.expandible {
+    padding-right: 2em;
+}
+.expandible::after {
+    content: ' +';
+    white-space: nowrap;
+    top: 0;
+    right: 0;
+}
+.expandible.open::after {
+    content: ' –';    
+}
+.expandible + ul {
+    max-height: 0;
+    transition: max-height 0.25s ease-in-out;
+    overflow: hidden;
+}
+.open + ul {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in-out;
+}

@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+li {
+  text-decoration:none;
+}
+.App {
+  padding: 20px;
+}
+.menu {
+    cursor: pointer;
+}
+.menu h2, 
+li {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  padding: 0;
+  margin: 0;
+}
+.menu ul {
+  list-style-type: none;
+}
+
+.menu .list {    
+    max-height: 0;
+    transition: max-height 0.35s ease-out;
+    overflow: hidden;
+}
+.expandible .list {
+    max-height: 500px;
+    transition: max-height 0.35s ease-in;
+}

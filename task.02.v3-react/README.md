@@ -11,7 +11,8 @@ Create React app :
 
 This project also uses [window.fetch polyfil](https://github.com/github/fetch) 
 which was installed with ***$ npm install whatwg-fetch --save*** command
-Use of fetch() : import 'whatwg-fetch'
+
+Use of fetch() : ***import 'whatwg-fetch'***
 
 Also this project uses [uuid library](https://www.npmjs.com/package/uuid) 
 It was installed with ***$ npm install uuid --save*** command

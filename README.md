@@ -3,3 +3,5 @@
 [Task 1. Demo](https://goo.gl/rZwPTJ)
 
 [Task 2. Demo](https://goo.gl/rDQlXW)
+
+[Task 2.v2 Demo](https://goo.gl/t8oiqq)

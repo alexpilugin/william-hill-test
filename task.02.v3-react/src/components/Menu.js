@@ -5,13 +5,21 @@ const uuidV4 = require('uuid/v4');
 
 class Menu extends React.Component {
 
+    hundleOnClickElement = (info) => {
+        this.props.getContent(info);
+    }
+
     createListContent(title, items) {
         var self = this; //since this is recursion
         var listElements = [];
         if (items !== undefined && items.length > 0) {
             listElements = items.map((el) => {
                 if (el.leaf) {
-                    return <ListElement key={uuidV4()} property={el} />
+                    return <ListElement
+                        key={uuidV4()}
+                        property={el}
+                        onClick={this.hundleOnClickElement}
+                    />
                 } else {
                     return self.createListContent(el.description, el.menu);
                 }

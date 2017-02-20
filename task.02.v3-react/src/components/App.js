@@ -1,17 +1,24 @@
 import React from 'react';
 import 'whatwg-fetch';
 import Menu from './Menu';
+import Content from './Content';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       menuData: [],
+      content: '',
     }
   }
 
+  //get content by click on an ListElement
+  getContent = (info) => {
+    this.setState({ content: info });
+  }
+
   //loading data from a server asynchronously using promises
-  load(url) {
+  load = (url) => {
     return fetch(url, {
       headers: {
         'Accept': 'application/json'
@@ -36,7 +43,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Menu title='Menu' items={this.state.menuData} />
+        <Menu title='Menu'
+          items={this.state.menuData}
+          getContent={this.getContent}
+        />
+        <Content content={this.state.content} />
       </div>
     )
   }

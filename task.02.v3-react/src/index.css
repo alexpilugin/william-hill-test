@@ -11,10 +11,16 @@ body, div {
 }
 .Menu {
     display: block;
+    float: left;
     cursor: pointer;
     padding: 0;
     width: 15rem;
     border-right: 1px solid gray;
+}
+.Content {
+    display: block;
+    float: left;
+    margin-left: 20px;  
 }
 ul {
     display: block;

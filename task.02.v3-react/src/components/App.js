@@ -1,6 +1,6 @@
 import React from 'react';
 import 'whatwg-fetch';
-import MenuContainer from './MenuContainer';
+import Menu from './Menu';
 
 class App extends React.Component {
   constructor() {
@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <MenuContainer title='Menu' items={this.state.menuData} />
+        <Menu title='Menu' items={this.state.menuData} />
       </div>
     )
   }

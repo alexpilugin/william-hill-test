@@ -1,35 +1,53 @@
-body {
+body, div {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-li {
-  text-decoration:none;
-}
 .App {
-  padding: 20px;
+  padding: 10px;
 }
-.menu {
+.open {
+    color: red;
+}
+.Menu {
+    display: block;
     cursor: pointer;
+    padding: 0;
+    width: 15rem;
+    border-right: 1px solid gray;
 }
-.menu h2, 
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    padding-left: 1rem;
+    -webkit-padding-start: 1rem;
+}
 li {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.3rem;
-  padding: 0;
-  margin: 0;
+    list-style-type:none;
+    position:relative;
 }
-.menu ul {
-  list-style-type: none;
+.expandible {
+    padding-right: 2em;
 }
-
-.menu .list {    
+.expandible::after {
+    content: ' +';
+    white-space: nowrap;
+    top: 0;
+    right: 0;
+}
+.expandible.open::after {
+    content: ' –';    
+}
+.expandible + ul {
     max-height: 0;
-    transition: max-height 0.35s ease-out;
+    transition: max-height 0.25s ease-in-out;
     overflow: hidden;
 }
-.expandible .list {
+.open + ul {
     max-height: 500px;
-    transition: max-height 0.35s ease-in;
+    transition: max-height 0.25s ease-in-out;
 }

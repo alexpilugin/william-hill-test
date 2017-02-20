@@ -7,14 +7,11 @@ class ListElement extends React.Component {
         if (prop.hasOwnProperty('leaf')) {
             classes = prop['cssClass'];
         }
-        //console.log(prop);
-
         return (
             <li id={prop.id} className={classes}>
                 {prop['description']}
             </li>
         )
-
     }
 }
 

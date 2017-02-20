@@ -10,6 +10,6 @@
 
 ![ScreenShot](./assets/Task2-v2.png)
 
-task.02.v3-react:
+[Task.02.v3-react Demo](https://goo.gl/hmPxez)
 
 ![Screenshot of React version](./assets/menu-react.png)
